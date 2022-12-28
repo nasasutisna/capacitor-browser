@@ -1,9 +1,9 @@
 import { registerPlugin } from '@capacitor/core';
 
-import type { browserPlugin } from './definitions';
+import type { BrowserPlugin } from './definitions';
 
-const browser = registerPlugin<browserPlugin>('browser', {
-  web: () => import('./web').then(m => new m.browserWeb()),
+const browser = registerPlugin<BrowserPlugin>('browser', {
+  web: () => import('./web').then(m => new m.BrowserWeb()),
 });
 
 export * from './definitions';
