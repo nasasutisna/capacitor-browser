@@ -11,7 +11,7 @@ import com.getcapacitor.annotation.CapacitorPlugin;
 import com.getcapacitor.util.WebColor;
 
 @CapacitorPlugin(name = "Browser")
-public class BrowserPlugin extends Plugin {
+class BrowserPlugin extends Plugin {
 
     private Browser implementation;
 
