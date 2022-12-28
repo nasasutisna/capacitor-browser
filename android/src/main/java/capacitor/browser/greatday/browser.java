@@ -1,5 +1,4 @@
 package capacitor.browser.greatday;
-
 import static androidx.browser.customtabs.CustomTabsIntent.SHARE_STATE_OFF;
 
 import android.content.ComponentName;
@@ -8,6 +7,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.browser.customtabs.*;
@@ -17,7 +17,7 @@ import androidx.browser.customtabs.*;
  * https://developer.chrome.com/multidevice/android/customtabs for background
  * on how this code works.
  */
-public class Browser {
+class Browser {
 
     /**
      * Interface for callbacks for browser events.
@@ -53,7 +53,8 @@ public class Browser {
         }
 
         @Override
-        public void onServiceDisconnected(ComponentName name) {}
+        public void onServiceDisconnected(ComponentName name) {
+        }
     };
 
     /**
@@ -105,7 +106,10 @@ public class Browser {
 
         builder.setShareState(SHARE_STATE_OFF);
         builder.setShowTitle(false);
-        CustomTabColorSchemeParams params = new CustomTabColorSchemeParams.Builder().setToolbarColor(Color.TRANSPARENT).build();
+        CustomTabColorSchemeParams params = new CustomTabColorSchemeParams
+                .Builder()
+                .setToolbarColor(Color.TRANSPARENT)
+                .build();
 
         builder.setDefaultColorSchemeParams(params);
 
@@ -170,14 +174,14 @@ public class Browser {
 
         if (browserSession == null) {
             browserSession =
-                customTabsClient.newSession(
-                    new CustomTabsCallback() {
-                        @Override
-                        public void onNavigationEvent(int navigationEvent, Bundle extras) {
-                            handledNavigationEvent(navigationEvent);
-                        }
-                    }
-                );
+                    customTabsClient.newSession(
+                            new CustomTabsCallback() {
+                                @Override
+                                public void onNavigationEvent(int navigationEvent, Bundle extras) {
+                                    handledNavigationEvent(navigationEvent);
+                                }
+                            }
+                    );
         }
 
         return browserSession;
