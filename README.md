@@ -1,38 +1,139 @@
-# Capacitor Plugins
+# capacitor-greatday-maps
 
-> ### :rotating_light: These plugins are for Capacitor 4 :rotating_light:
->
+The capacitor plugin for custom browser without toolbar and title
+
+## Install
+
+```bash
+npm install capacitor-browser-custom
+npx cap sync
+```
+
+## API
+
+<docgen-index>
+
+* [`open(...)`](#open)
+* [`close()`](#close)
+* [`addListener('browserFinished', ...)`](#addlistenerbrowserfinished)
+* [`addListener('browserPageLoaded', ...)`](#addlistenerbrowserpageloaded)
+* [`removeAllListeners()`](#removealllisteners)
+* [Interfaces](#interfaces)
+
+</docgen-index>
+
+<docgen-api>
+<!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
+
+### open(...)
+
+```typescript
+open(options: OpenOptions) => Promise<void>
+```
+
+Open a page with the specified options.
+
+| Param         | Type                                                |
+| ------------- | --------------------------------------------------- |
+| **`options`** | <code><a href="#openoptions">OpenOptions</a></code> |
+
+**Since:** 1.0.0
+
+--------------------
 
 
-## Plugins
+### close()
 
-| Package | Source | Version |
-| --- | --- | --- |
-| [`@capacitor/action-sheet`](https://capacitorjs.com/docs/apis/action-sheet) | [`./action-sheet`](./action-sheet) | [![npm badge](https://img.shields.io/npm/v/@capacitor/action-sheet?style=flat-square)](https://www.npmjs.com/package/@capacitor/action-sheet)
-| [`@capacitor/app-launcher`](https://capacitorjs.com/docs/apis/app-launcher) | [`./app-launcher`](./app-launcher) | [![npm badge](https://img.shields.io/npm/v/@capacitor/app-launcher?style=flat-square)](https://www.npmjs.com/package/@capacitor/app-launcher)
-| [`@capacitor/app`](https://capacitorjs.com/docs/apis/app) | [`./app`](./app) | [![npm badge](https://img.shields.io/npm/v/@capacitor/app?style=flat-square)](https://www.npmjs.com/package/@capacitor/app)
-| [`@capacitor/browser`](https://capacitorjs.com/docs/apis/browser) | [`./browser`](./browser) | [![npm badge](https://img.shields.io/npm/v/@capacitor/browser?style=flat-square)](https://www.npmjs.com/package/@capacitor/browser)
-| [`@capacitor/camera`](https://capacitorjs.com/docs/apis/camera) | [`./camera`](./camera) | [![npm badge](https://img.shields.io/npm/v/@capacitor/camera?style=flat-square)](https://www.npmjs.com/package/@capacitor/camera)
-| [`@capacitor/clipboard`](https://capacitorjs.com/docs/apis/clipboard) | [`./clipboard`](./clipboard) | [![npm badge](https://img.shields.io/npm/v/@capacitor/clipboard?style=flat-square)](https://www.npmjs.com/package/@capacitor/clipboard)
-| [`@capacitor/device`](https://capacitorjs.com/docs/apis/device) | [`./device`](./device) | [![npm badge](https://img.shields.io/npm/v/@capacitor/device?style=flat-square)](https://www.npmjs.com/package/@capacitor/device)
-| [`@capacitor/dialog`](https://capacitorjs.com/docs/apis/dialog) | [`./dialog`](./dialog) | [![npm badge](https://img.shields.io/npm/v/@capacitor/dialog?style=flat-square)](https://www.npmjs.com/package/@capacitor/dialog)
-| [`@capacitor/filesystem`](https://capacitorjs.com/docs/apis/filesystem) | [`./filesystem`](./filesystem) | [![npm badge](https://img.shields.io/npm/v/@capacitor/filesystem?style=flat-square)](https://www.npmjs.com/package/@capacitor/filesystem)
-| [`@capacitor/geolocation`](https://capacitorjs.com/docs/apis/geolocation) | [`./geolocation`](./geolocation) | [![npm badge](https://img.shields.io/npm/v/@capacitor/geolocation?style=flat-square)](https://www.npmjs.com/package/@capacitor/geolocation)
-| [`@capacitor/google-maps`](https://capacitorjs.com/docs/apis/google-maps) | [`./google-maps`](./google-maps) | [![npm badge](https://img.shields.io/npm/v/@capacitor/google-maps?style=flat-square)](https://www.npmjs.com/package/@capacitor/google-maps)
-| [`@capacitor/haptics`](https://capacitorjs.com/docs/apis/haptics) | [`./haptics`](./haptics) | [![npm badge](https://img.shields.io/npm/v/@capacitor/haptics?style=flat-square)](https://www.npmjs.com/package/@capacitor/haptics)
-| [`@capacitor/keyboard`](https://capacitorjs.com/docs/apis/keyboard) | [`./keyboard`](./keyboard) | [![npm badge](https://img.shields.io/npm/v/@capacitor/keyboard?style=flat-square)](https://www.npmjs.com/package/@capacitor/keyboard)
-| [`@capacitor/local-notifications`](https://capacitorjs.com/docs/apis/local-notifications) | [`./local-notifications`](./local-notifications) | [![npm badge](https://img.shields.io/npm/v/@capacitor/local-notifications?style=flat-square)](https://www.npmjs.com/package/@capacitor/local-notifications)
-| [`@capacitor/motion`](https://capacitorjs.com/docs/apis/motion) | [`./motion`](./motion) | [![npm badge](https://img.shields.io/npm/v/@capacitor/motion?style=flat-square)](https://www.npmjs.com/package/@capacitor/motion)
-| [`@capacitor/network`](https://capacitorjs.com/docs/apis/network) | [`./network`](./network) | [![npm badge](https://img.shields.io/npm/v/@capacitor/network?style=flat-square)](https://www.npmjs.com/package/@capacitor/network)
-| [`@capacitor/preferences`](https://capacitorjs.com/docs/apis/preferences) | [`./preferences`](./preferences) | [![npm badge](https://img.shields.io/npm/v/@capacitor/preferences?style=flat-square)](https://www.npmjs.com/package/@capacitor/preferences)
-| [`@capacitor/push-notifications`](https://capacitorjs.com/docs/apis/push-notifications) | [`./push-notifications`](./push-notifications) | [![npm badge](https://img.shields.io/npm/v/@capacitor/push-notifications?style=flat-square)](https://www.npmjs.com/package/@capacitor/push-notifications)
-| [`@capacitor/screen-reader`](https://capacitorjs.com/docs/apis/screen-reader) | [`./screen-reader`](./screen-reader) | [![npm badge](https://img.shields.io/npm/v/@capacitor/screen-reader?style=flat-square)](https://www.npmjs.com/package/@capacitor/screen-reader)
-| [`@capacitor/share`](https://capacitorjs.com/docs/apis/share) | [`./share`](./share) | [![npm badge](https://img.shields.io/npm/v/@capacitor/share?style=flat-square)](https://www.npmjs.com/package/@capacitor/share)
-| [`@capacitor/splash-screen`](https://capacitorjs.com/docs/apis/splash-screen) | [`./splash-screen`](./splash-screen) | [![npm badge](https://img.shields.io/npm/v/@capacitor/splash-screen?style=flat-square)](https://www.npmjs.com/package/@capacitor/splash-screen)
-| [`@capacitor/status-bar`](https://capacitorjs.com/docs/apis/status-bar) | [`./status-bar`](./status-bar) | [![npm badge](https://img.shields.io/npm/v/@capacitor/status-bar?style=flat-square)](https://www.npmjs.com/package/@capacitor/status-bar)
-| [`@capacitor/text-zoom`](https://capacitorjs.com/docs/apis/text-zoom) | [`./text-zoom`](./text-zoom) | [![npm badge](https://img.shields.io/npm/v/@capacitor/text-zoom?style=flat-square)](https://www.npmjs.com/package/@capacitor/text-zoom)
-| [`@capacitor/toast`](https://capacitorjs.com/docs/apis/toast) | [`./toast`](./toast) | [![npm badge](https://img.shields.io/npm/v/@capacitor/toast?style=flat-square)](https://www.npmjs.com/package/@capacitor/toast)
+```typescript
+close() => Promise<void>
+```
 
-## Contributing
+Web & iOS only: Close an open browser window.
 
-See [`CONTRIBUTING.md`](./CONTRIBUTING.md).
+No-op on other platforms.
+
+**Since:** 1.0.0
+
+--------------------
+
+
+### addListener('browserFinished', ...)
+
+```typescript
+addListener(eventName: 'browserFinished', listenerFunc: () => void) => Promise<PluginListenerHandle> & PluginListenerHandle
+```
+
+Android & iOS only: Listen for the browser finished event.
+It fires when the Browser is closed by the user.
+
+| Param              | Type                           |
+| ------------------ | ------------------------------ |
+| **`eventName`**    | <code>'browserFinished'</code> |
+| **`listenerFunc`** | <code>() =&gt; void</code>     |
+
+**Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt; & <a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
+
+**Since:** 1.0.0
+
+--------------------
+
+
+### addListener('browserPageLoaded', ...)
+
+```typescript
+addListener(eventName: 'browserPageLoaded', listenerFunc: () => void) => Promise<PluginListenerHandle> & PluginListenerHandle
+```
+
+Android & iOS only: Listen for the page loaded event.
+It's only fired when the URL passed to open method finish loading.
+It is not invoked for any subsequent page loads.
+
+| Param              | Type                             |
+| ------------------ | -------------------------------- |
+| **`eventName`**    | <code>'browserPageLoaded'</code> |
+| **`listenerFunc`** | <code>() =&gt; void</code>       |
+
+**Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt; & <a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
+
+**Since:** 1.0.0
+
+--------------------
+
+
+### removeAllListeners()
+
+```typescript
+removeAllListeners() => Promise<void>
+```
+
+Remove all native listeners for this plugin.
+
+**Since:** 1.0.0
+
+--------------------
+
+
+### Interfaces
+
+
+#### OpenOptions
+
+Represents the options passed to `open`.
+
+| Prop                    | Type                                   | Description                                                                                                                                | Since |
+| ----------------------- | -------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ | ----- |
+| **`url`**               | <code>string</code>                    | The URL to which the browser is opened.                                                                                                    | 1.0.0 |
+| **`windowName`**        | <code>string</code>                    | Web only: Optional target for browser open. Follows the `target` property for window.open. Defaults to _blank. Ignored on other platforms. | 1.0.0 |
+| **`toolbarColor`**      | <code>string</code>                    | A hex color to which the toolbar color is set.                                                                                             | 1.0.0 |
+| **`presentationStyle`** | <code>'fullscreen' \| 'popover'</code> | iOS only: The presentation style of the browser. Defaults to fullscreen. Ignored on other platforms.                                       | 1.0.0 |
+| **`width`**             | <code>number</code>                    | iOS only: The width the browser when using presentationStyle 'popover' on iPads. Ignored on other platforms.                               | 4.0.0 |
+| **`height`**            | <code>number</code>                    | iOS only: The height the browser when using presentationStyle 'popover' on iPads. Ignored on other platforms.                              | 4.0.0 |
+
+
+#### PluginListenerHandle
+
+| Prop         | Type                                      |
+| ------------ | ----------------------------------------- |
+| **`remove`** | <code>() =&gt; Promise&lt;void&gt;</code> |
+
+</docgen-api>
